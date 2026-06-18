@@ -1,11 +1,13 @@
 import Container from "@/components/Container";
 
-export default function Home() {
+function Store() {
   return (
     <div>
       <Container>
-        <h1>Home</h1>
+        <h1>Store</h1>
       </Container>
     </div>
   );
 }
+
+export default Store;
