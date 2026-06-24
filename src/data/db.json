@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Pasta",
+      "description": "High-quality pasta made from premium durum wheat. Perfect for preparing delicious and nutritious family meals",
+      "price": 250,
+      "img": "/images/pasta.webp"
+    },
+    {
+      "id": "2",
+      "title": "Oil",
+      "description": "Pure and refined cooking oil with a light texture. Ideal for frying, cooking, and everyday meal preparation.",
+      "price": 100,
+      "img": "/images/oil.webp"
+    },
+    {
+      "id": "3",
+      "title": "Tomato",
+      "description": "Rich and concentrated tomato paste made from fresh tomatoes. Adds a deep flavor and vibrant color to your dishes.",
+      "price": 78,
+      "img": "/images/tomato.webp"
+    },
+    {
+      "id": "4",
+      "title": "Rice",
+      "description": "Premium long-grain rice with a natural aroma and soft texture. Perfect for traditional and everyday meals.",
+      "price": 306,
+      "img": "/images/rice.webp"
+    },
+    {
+      "id": "5",
+      "title": "Pizza Cheese",
+      "description": "Fresh mozzarella cheese with a rich and creamy taste. Ideal for pizza, pasta, and baked dishes.",
+      "price": 145,
+      "img": "/images/pizzaCheese.webp"
+    }
+  ]
+}

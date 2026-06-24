@@ -1,12 +1,12 @@
-interface IProductProp {
-  id?: number;
+export interface IProductProp {
+  id?: string;
   img: string;
   title: string;
-  des?: string;
+  description?: string;
   price: string;
 }
 
-function ProductItem({ id, img, title, des, price }: IProductProp) {
+function ProductItem({ id, img, title, description, price }: IProductProp) {
   return (
     <div className="shadow-md">
       <img src={img} alt="" />
@@ -14,10 +14,12 @@ function ProductItem({ id, img, title, des, price }: IProductProp) {
       <div className="">
         <h3 className="text-center my-2 font-extrabold"> {title} </h3>
 
-        <div className="flex flex-row-reverse  justify-between p-4">
-          <p>قیمت </p>
+        <p className="px-4 line-clamp-2 leading-6">{description}</p>
+
+        <div className=" p-4 ">
+          <p className="inline">Price : </p>
           <span>{price}</span>
-          <span>تومان</span>
+          <span className="ml-2">$</span>
         </div>
       </div>
     </div>
