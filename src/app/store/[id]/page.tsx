@@ -1,3 +1,4 @@
+import AddToCart from "@/components/AddToCart";
 import Container from "@/components/Container";
 import { IProductProp } from "@/components/ProductItem";
 
@@ -32,6 +33,7 @@ async function ProductPage({ params }: IProps) {
             <span className="mr-2 text-2xl">{data.price}</span>
             <span className="mr-2 text-2xl">$</span>
           </div>
+          <AddToCart />
         </div>
       </div>
     </Container>

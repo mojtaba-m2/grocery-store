@@ -7,9 +7,6 @@ function Cart() {
       <h1 className="my-6">Cart</h1>
       <div className="my-6 ">
         <CartItem />
-        <CartItem />
-        <CartItem />
-        <CartItem />
       </div>
 
       <div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Layout from "@/components/Layout";
+import { ShoppingCartContextProvider } from "@/context/ShoppingCartContext";
 
 export const metadata: Metadata = {
   title: "Grocery Store",
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-full flex flex-col">
-        <Layout>{children}</Layout>
+        <ShoppingCartContextProvider>
+          <Layout>{children}</Layout>
+        </ShoppingCartContextProvider>
       </body>
     </html>
   );
