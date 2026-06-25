@@ -2,13 +2,26 @@
 
 import { useShoppingCartContext } from "@/context/ShoppingCartContext";
 
-function AddToCart() {
-  const { cartItems } = useShoppingCartContext();
+interface IAddToCartProps {
+  id: string;
+}
+
+function AddToCart({ id }: IAddToCartProps) {
+  const { cartItems, handleIncreaseProductQty } = useShoppingCartContext();
+
+  console.log(cartItems);
 
   return (
     <div className="my-4">
-      <button className="bg-sky-500 text-white px-2  rounded ">+</button>
-      <span className="mx-4">2</span>
+      <button
+        className="bg-sky-500 text-white px-2  rounded "
+        onClick={() => {
+          handleIncreaseProductQty(Number(id));
+        }}
+      >
+        +
+      </button>
+      <span className="mx-4">3</span>
       <button className="bg-sky-500 text-white px-2  rounded ">-</button>
     </div>
   );
