@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Container from "./Container";
+import { useShoppingCartContext } from "@/context/ShoppingCartContext";
 
 function Navbar() {
   const pathName = usePathname();
@@ -13,6 +14,8 @@ function Navbar() {
     { id: 1, title: "Home", href: "/" },
     { id: 2, title: "Store", href: "/store" },
   ];
+
+  const { cartTotalQty } = useShoppingCartContext();
 
   return (
     <>
@@ -33,7 +36,7 @@ function Navbar() {
 
             <div>
               <Link href={"/cart"}>
-                <span>Cart</span>
+                <span>Cart : {cartTotalQty}</span>
               </Link>
             </div>
           </div>

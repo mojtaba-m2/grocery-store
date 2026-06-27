@@ -7,22 +7,46 @@ interface IAddToCartProps {
 }
 
 function AddToCart({ id }: IAddToCartProps) {
-  const { cartItems, handleIncreaseProductQty } = useShoppingCartContext();
+  const {
+    cartItems,
+    getProductQty,
+    handleIncreaseProductQty,
+    handleDecreaseProductQty,
+    handleRemoveBtn,
+  } = useShoppingCartContext();
 
   console.log(cartItems);
 
   return (
-    <div className="my-4">
+    <div className="my-4 ">
+      <div className="">
+        <button
+          className="bg-sky-500 text-white px-2 rounded "
+          onClick={() => {
+            handleIncreaseProductQty(Number(id));
+          }}
+        >
+          +
+        </button>
+        <span className="mx-4">{getProductQty(Number(id))}</span>
+        <button
+          className="bg-sky-500 text-white px-2 rounded "
+          onClick={() => {
+            handleDecreaseProductQty(Number(id));
+          }}
+        >
+          -
+        </button>
+      </div>
+
       <button
-        className="bg-sky-500 text-white px-2  rounded "
+        className="bg-red-500 text-white my-2 px-3 rounded"
         onClick={() => {
-          handleIncreaseProductQty(Number(id));
+          handleRemoveBtn(Number(id));
         }}
       >
-        +
+        Remove
       </button>
-      <span className="mx-4">3</span>
-      <button className="bg-sky-500 text-white px-2  rounded ">-</button>
     </div>
   );
 }

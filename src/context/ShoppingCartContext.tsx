@@ -14,6 +14,10 @@ type TCartItems = {
 type TShoppingCartContext = {
   cartItems: TCartItems[];
   handleIncreaseProductQty: (id: number) => void;
+  getProductQty: (id: number) => number;
+  cartTotalQty: number;
+  handleDecreaseProductQty: (id: number) => void;
+  handleRemoveBtn: (id: number) => void;
 };
 
 const ShoppingCartContext = createContext({} as TShoppingCartContext);
@@ -27,15 +31,23 @@ export function ShoppingCartContextProvider({
 }: TShppingCartContextProviderProps) {
   const [cartItems, setCartItems] = useState<TCartItems[]>([]);
 
+  const cartTotalQty = cartItems.reduce((totalQty, item) => {
+    return totalQty + item.qty;
+  }, 0);
+
+  const getProductQty = (id: number) => {
+    return cartItems.find((item) => item.id === id)?.qty || 0;
+  };
+
   const handleIncreaseProductQty = (id: number) => {
-    setCartItems((prevCartItem) => {
-      const productExists = prevCartItem.find((item) => item.id == id);
+    setCartItems((prevCartItems) => {
+      const productExists = prevCartItems.find((item) => item.id === id);
 
       if (!productExists) {
-        return [...prevCartItem, { id: id, qty: 1 }];
+        return [...prevCartItems, { id: id, qty: 1 }];
       } else {
-        return prevCartItem.map((item) => {
-          if (item.id == id) {
+        return prevCartItems.map((item) => {
+          if (item.id === id) {
             return {
               ...item,
               qty: item.qty + 1,
@@ -48,9 +60,47 @@ export function ShoppingCartContextProvider({
     });
   };
 
+  // وجود نداره
+  // وجود داره میخوایم ازش کم کنیم
+  // محصول مورد نظر نیست
+
+  const handleDecreaseProductQty = (id: number) => {
+    setCartItems((prevCartItems) => {
+      const isLastOne = prevCartItems.find((item) => item.id == id);
+
+      if (isLastOne?.qty == 1) {
+        return prevCartItems.filter((item) => item.id != id);
+      } else {
+        return prevCartItems.map((item) => {
+          if (item.id == id) {
+            return {
+              ...item,
+              qty: item.qty - 1,
+            };
+          } else {
+            return item;
+          }
+        });
+      }
+    });
+  };
+
+  const handleRemoveBtn = (id: number) => {
+    setCartItems((prevCartItems) => {
+      return prevCartItems.filter((item) => item.id != id);
+    });
+  };
+
   return (
     <ShoppingCartContext.Provider
-      value={{ cartItems, handleIncreaseProductQty }}
+      value={{
+        cartItems,
+        handleIncreaseProductQty,
+        getProductQty,
+        cartTotalQty,
+        handleDecreaseProductQty,
+        handleRemoveBtn,
+      }}
     >
       {children}
     </ShoppingCartContext.Provider>
