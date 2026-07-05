@@ -8,14 +8,11 @@ interface IAddToCartProps {
 
 function AddToCart({ id }: IAddToCartProps) {
   const {
-    cartItems,
     getProductQty,
     handleIncreaseProductQty,
     handleDecreaseProductQty,
     handleRemoveBtn,
   } = useShoppingCartContext();
-
-  console.log(cartItems);
 
   return (
     <div className="my-4 ">

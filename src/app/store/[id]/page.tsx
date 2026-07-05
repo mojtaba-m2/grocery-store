@@ -1,6 +1,6 @@
 import AddToCart from "@/components/AddToCart";
 import Container from "@/components/Container";
-import { IProductProp } from "@/components/ProductItem";
+import { IProductProps } from "@/components/ProductItem";
 
 interface IProps {
   params: Promise<{ id: string }>;
@@ -12,7 +12,7 @@ async function ProductPage({ params }: IProps) {
 
   const result = await fetch(`http://localhost:8000/products/${id}`);
 
-  const data = (await result.json()) as IProductProp;
+  const data = (await result.json()) as IProductProps;
 
   return (
     <Container>

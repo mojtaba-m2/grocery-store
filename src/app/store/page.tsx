@@ -1,11 +1,11 @@
 import Container from "@/components/Container";
-import ProductItem, { IProductProp } from "@/components/ProductItem";
+import ProductItem, { IProductProps } from "@/components/ProductItem";
 import Link from "next/link";
 
 async function Store() {
   const result = await fetch("http://localhost:8000/products");
 
-  const data = (await result.json()) as IProductProp[];
+  const data = (await result.json()) as IProductProps[];
 
   return (
     <div>

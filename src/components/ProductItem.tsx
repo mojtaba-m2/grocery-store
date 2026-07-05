@@ -1,12 +1,12 @@
-export interface IProductProp {
+export interface IProductProps {
   id?: string;
   img: string;
   title: string;
   description?: string;
-  price: string;
+  price: number;
 }
 
-function ProductItem({ id, img, title, description, price }: IProductProp) {
+function ProductItem({ id, img, title, description, price }: IProductProps) {
   return (
     <div className="shadow-md">
       <img src={img} alt="" />
