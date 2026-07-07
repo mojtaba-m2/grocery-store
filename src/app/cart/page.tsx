@@ -5,12 +5,25 @@ import Container from "@/components/Container";
 import { IProductProps } from "@/components/ProductItem";
 import { useShoppingCartContext } from "@/context/ShoppingCartContext";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 interface ICodeData {
   id: string;
   code: string;
   percentage: number;
+}
+
+type TCartItems = {
+  id: number;
+  qty: number;
+};
+
+interface IOrderData {
+  id?: number;
+  userName: string;
+  phoneNumber: string;
+  address: string;
+  cart?: TCartItems[];
 }
 
 function Cart() {
@@ -24,6 +37,13 @@ function Cart() {
 
   const [message, setMessage] = useState<string>("");
 
+  const [orderData, setOrderData] = useState<IOrderData>({
+    userName: "",
+    phoneNumber: "",
+    address: "",
+    cart: cartItems,
+  });
+
   useEffect(() => {
     axios.get(`http://localhost:8000/products`).then((result) => {
       const { data } = result;
@@ -31,8 +51,6 @@ function Cart() {
       setAllProducts(data);
     });
   }, []);
-
-
 
   const totalPrice: () => number = () => {
     return cartItems.reduce((total, item) => {
@@ -66,6 +84,21 @@ function Cart() {
     );
   };
 
+  const handlePlaceAnOrder = () => {
+    axios({
+      method: "POST",
+      url: "http://localhost:8000/orders",
+      data: {
+        id: Math.floor(Math.random() * 1000),
+        userName: orderData.userName,
+        phoneNumber: orderData.phoneNumber,
+        address: orderData.address,
+        cart: cartItems,
+      },
+    });
+    setOrderData({ userName: "", address: "", phoneNumber: "" });
+  };
+
   return (
     <Container>
       <h1 className="my-6">Cart</h1>
@@ -93,7 +126,7 @@ function Cart() {
                 setDiscountCodeInput(e.target.value);
               }}
               value={discountCodeInput}
-              className="border mr-4"
+              className="border mr-4 p-1"
               placeholder="کد تخفیف را وارد کنید"
               type="text"
             />
@@ -113,6 +146,49 @@ function Cart() {
               }}
             >
               apply
+            </button>
+
+            <input
+              onChange={(e) => {
+                setOrderData((prevState) => ({
+                  ...prevState,
+                  userName: e.target.value,
+                }));
+              }}
+              value={orderData.userName}
+              className="block border p-1 mt-4"
+              type="text"
+              placeholder="enter your userName"
+            />
+            <input
+              onChange={(e) => {
+                setOrderData((prevState) => ({
+                  ...prevState,
+                  phoneNumber: e.target.value,
+                }));
+              }}
+              value={orderData.phoneNumber}
+              className="block border p-1 mt-4"
+              type="tel"
+              placeholder="enter your phoneNumber"
+            />
+            <input
+              onChange={(e) => {
+                setOrderData((prevState) => ({
+                  ...prevState,
+                  address: e.target.value,
+                }));
+              }}
+              value={orderData.address}
+              className="block border p-1 mt-4 w-1/2"
+              type="text"
+              placeholder="enter your address"
+            />
+            <button
+              className=" bg-sky-400 text-white px-4 py-1 mt-1 rounded"
+              onClick={handlePlaceAnOrder}
+            >
+              place an order
             </button>
           </div>
         </div>

@@ -13,6 +13,7 @@ function Navbar() {
   const navLinks = [
     { id: 1, title: "Home", href: "/" },
     { id: 2, title: "Store", href: "/store" },
+    { id: 3, title: "Dashboard", href: "/dashboard" },
   ];
 
   const { cartTotalQty } = useShoppingCartContext();
