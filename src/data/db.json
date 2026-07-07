@@ -34,12 +34,81 @@
       "description": "Fresh mozzarella cheese with a rich and creamy taste. Ideal for pizza, pasta, and baked dishes.",
       "price": 145,
       "img": "/images/pizzaCheese.webp"
+    },
+    {
+      "id": "6",
+      "title": "Pasta",
+      "description": "High-quality pasta made from premium durum wheat. Perfect for preparing delicious and nutritious family meals",
+      "price": 250,
+      "img": "/images/pasta.webp"
+    },
+    {
+      "id": "7",
+      "title": "Oil",
+      "description": "Pure and refined cooking oil with a light texture. Ideal for frying, cooking, and everyday meal preparation.",
+      "price": 100,
+      "img": "/images/oil.webp"
+    },
+    {
+      "id": "8",
+      "title": "Tomato",
+      "description": "Rich and concentrated tomato paste made from fresh tomatoes. Adds a deep flavor and vibrant color to your dishes.",
+      "price": 78,
+      "img": "/images/tomato.webp"
+    },
+    {
+      "id": "9",
+      "title": "Rice",
+      "description": "Premium long-grain rice with a natural aroma and soft texture. Perfect for traditional and everyday meals.",
+      "price": 306,
+      "img": "/images/rice.webp"
+    },
+    {
+      "id": "10",
+      "title": "Pizza Cheese",
+      "description": "Fresh mozzarella cheese with a rich and creamy taste. Ideal for pizza, pasta, and baked dishes.",
+      "price": 145,
+      "img": "/images/pizzaCheese.webp"
     }
   ],
-
   "discounts": [
-    { "id": 1, "code": "OFF10", "percentage": 10 },
-    { "id": 2, "code": "OFF20", "percentage": 20 },
-    { "id": 3, "code": "SAVE30", "percentage": 30 }
-  ]
+    {
+      "id": "1",
+      "code": "OFF10",
+      "percentage": 10
+    },
+    {
+      "id": "2",
+      "code": "OFF20",
+      "percentage": 20
+    },
+    {
+      "id": "3",
+      "code": "SAVE30",
+      "percentage": 30
+    }
+  ],
+  "orders": [
+    {
+      "id": "nT6uBHZzGS8",
+      "userName": "mojtaba molaverdi",
+      "phoneNumber": "09365287026",
+      "address": "karaj , hesarak , enghlab",
+      "cart": [
+        {
+          "id": 1,
+          "qty": 6
+        },
+        {
+          "id": 2,
+          "qty": 4
+        },
+        {
+          "id": 3,
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
