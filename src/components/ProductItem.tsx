@@ -6,6 +6,16 @@ export interface IProductProps {
   price: number;
 }
 
+export interface IProductList {
+  first: number | null;
+  items: number | null;
+  last: number | null;
+  next: number | null;
+  pages: number ;
+  prev: number | null;
+  data: IProductProps[];
+}
+
 function ProductItem({ id, img, title, description, price }: IProductProps) {
   return (
     <div className="shadow-md">

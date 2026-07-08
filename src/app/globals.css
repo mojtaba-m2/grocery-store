@@ -24,3 +24,25 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.pagination ul {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pagination li {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.pagination a {
+  display: block;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.pagination .selected {
+  background: #0ea5e9;
+  color: white;
+}
