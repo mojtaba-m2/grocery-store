@@ -37,38 +37,59 @@
     },
     {
       "id": "6",
-      "title": "Pasta",
-      "description": "High-quality pasta made from premium durum wheat. Perfect for preparing delicious and nutritious family meals",
-      "price": 250,
-      "img": "/images/pasta.webp"
+      "title": "Soy Protein",
+      "description": "High-quality soy protein, perfect for vegetarian meals and a healthy meat alternative.",
+      "price": 90,
+      "img": "/images/soyProtein.webp"
     },
     {
       "id": "7",
-      "title": "Oil",
-      "description": "Pure and refined cooking oil with a light texture. Ideal for frying, cooking, and everyday meal preparation.",
-      "price": 100,
-      "img": "/images/oil.webp"
+      "title": "Beef Burger",
+      "description": "Delicious ready-to-cook beef burger made from high-quality meat for a satisfying meal.",
+      "price": 130,
+      "img": "/images/beefBurger.webp"
     },
     {
       "id": "8",
-      "title": "Tomato",
-      "description": "Rich and concentrated tomato paste made from fresh tomatoes. Adds a deep flavor and vibrant color to your dishes.",
-      "price": 78,
-      "img": "/images/tomato.webp"
+      "title": "Mayonnaise",
+      "description": "Creamy and flavorful mayonnaise, perfect for salads, sandwiches, and fast food.",
+      "price": 70,
+      "img": "/images/mayonaise.webp"
     },
     {
       "id": "9",
-      "title": "Rice",
-      "description": "Premium long-grain rice with a natural aroma and soft texture. Perfect for traditional and everyday meals.",
-      "price": 306,
-      "img": "/images/rice.webp"
+      "title": "Ketchup",
+      "description": "Rich and tasty ketchup, ideal for fries, burgers, and a variety of meals.",
+      "price": 63,
+      "img": "/images/ketchup.webp"
     },
     {
       "id": "10",
-      "title": "Pizza Cheese",
-      "description": "Fresh mozzarella cheese with a rich and creamy taste. Ideal for pizza, pasta, and baked dishes.",
-      "price": 145,
-      "img": "/images/pizzaCheese.webp"
+      "title": "Lentils",
+      "description": "Fresh premium lentils, rich in protein and perfect for a variety of homemade dishes.",
+      "price": 400,
+      "img": "/images/lentils.webp"
+    },
+    {
+      "id": "11",
+      "title": "Chickpeas",
+      "description": "Premium cleaned chickpeas, ideal for soups, stews, and traditional dishes.",
+      "price": 374,
+      "img": "/images/chickpeas.webp"
+    },
+    {
+      "id": "12",
+      "title": "Kidney bean",
+      "description": "Premium red kidney beans with uniform grains, perfect for stews, chili, and salads.",
+      "price": 455,
+      "img": "/images/kidneyBeans.webp"
+    },
+    {
+      "id": "13",
+      "title": "Split Peas",
+      "description": "Fresh premium split peas, ideal for Gheymeh stew, soups, and a variety of traditional dishes.",
+      "price": 455,
+      "img": "/images/splitPeas.webp"
     }
   ],
   "discounts": [

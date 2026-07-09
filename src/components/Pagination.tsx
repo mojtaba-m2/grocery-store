@@ -9,7 +9,7 @@ function Pagination({ pageCount }: { pageCount: number }) {
   const handlePageClick = (e: { selected: number }) => {
     const page = e.selected + 1;
 
-    router.push(`/store?page=${page}&per_page=3`);
+    router.push(`/store?page=${page}&per_page=4`);
   };
 
   return (
